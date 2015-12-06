@@ -1,0 +1,41 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="app-logo">
+    <style is="custom">
+        :host {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .logo {
+            width: 65%;
+            max-width: 300px;
+            height: auto;
+        }
+    </style>
+    <template>
+        <a href="{{url}}" title="{{tooltip}}">
+            <img class="logo" src="/resources/img/full-logo.png">
+        </a>
+    </template>
+    <script>
+        Polymer({
+            is: "app-logo",
+            properties: {
+                url: {
+                    type: String,
+                    value: '/'
+                },
+                tooltip: {
+                    type: String,
+                    value: 'Gume'
+                }
+            }
+        });
+    </script>
+</dom-module>
