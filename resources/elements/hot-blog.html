@@ -1,0 +1,72 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+
+<dom-module id="hot-blog">
+    <style is="custom-style">
+        :host {
+            display: block;
+            margin: 25px auto;
+        }
+        a {
+            text-decoration: none;
+        }
+        paper-material {
+            display: block;
+            position: relative;
+            margin: auto;
+            width: 150px;
+            height: 150px;
+            -webkit-border-radius: 150px;
+            -moz-border-radius: 150px;
+            border-radius: 150px;
+            background-color: white;
+            @apply(--layout-horizontal);
+            @apply(--layout-center);
+        }
+        .blog-thumb {
+            width: 100%;
+            margin: auto;
+            -webkit-border-radius: 150px;
+            -moz-border-radius: 150px;
+            border-radius: 150px;
+        }
+        .blog-content {
+            width: 80%;
+            margin: 10px auto;
+            color: var(--secondary-text-color);
+        }
+        .blog-content > ::content .title {
+            @apply(--paper-font-title);
+        }
+        .blog-content > ::content .description {
+            @apply(--paper-font-body1);
+            text-align: justify;
+        }
+    </style>
+    <template>
+        <a href="{{href}}">
+            <paper-material elevation="2">
+                <img class="blog-thumb" src="{{src}}" title="">
+            </paper-material>
+            <div class="blog-content">
+                <content></content>
+            </div>
+        </a>
+    </template>
+    <script>
+        Polymer({
+            is: "hot-blog",
+            properties: {
+                src: {
+                    type: String,
+                    value: '/resources/img/logo.png'
+                },
+                href: {
+                    type: String,
+                    value: '#'
+                }
+            }
+        });
+    </script>
+</dom-module>
