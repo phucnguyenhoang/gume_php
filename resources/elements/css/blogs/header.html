@@ -11,6 +11,9 @@
 <link rel="import" href="/resources/bower_components/paper-item/paper-item.html">
 <link rel="import" href="/resources/bower_components/paper-item/paper-icon-item.html">
 
+
+<link rel="import" href="/resources/elements/js/menu-item-behavior.html">
+
 <link rel="import" href="/resources/elements/app-logo.html">
 <link rel="import" href="/resources/elements/blog-search.html">
 <link rel="import" href="/resources/elements/hot-blog.html">
@@ -18,6 +21,8 @@
     paper-drawer-panel .pan-drawer {
         background-color: var(--paper-grey-200);
         border-right: 1px solid #CCCCCC;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
     paper-toolbar.drawer-toolbar {
         background-color: var(--paper-grey-200);
@@ -33,9 +38,14 @@
         line-height: 1.1;
     }
 
-    .blog-menu paper-item {
-        --paper-item: {
+    .blog-menu paper-icon-item {
+        --paper-icon-item: {
              cursor: pointer;
+         };
+    }
+    .blog-menu {
+        --paper-menu-selected-item: {
+            background-color: var(--paper-grey-600);
          };
     }
     .blog-menu .flex {
