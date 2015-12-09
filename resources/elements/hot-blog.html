@@ -45,9 +45,9 @@
         }
     </style>
     <template>
-        <a href="{{href}}">
+        <a href="{{src}}">
             <paper-material elevation="2">
-                <img class="blog-thumb" src="{{src}}" title="">
+                <img class="blog-thumb" src="{{thumb}}" title="">
             </paper-material>
             <div class="blog-content">
                 <content></content>
@@ -58,11 +58,11 @@
         Polymer({
             is: "hot-blog",
             properties: {
-                src: {
+                thumb: {
                     type: String,
                     value: '/resources/img/logo.png'
                 },
-                href: {
+                src: {
                     type: String,
                     value: '#'
                 }

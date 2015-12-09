@@ -30,7 +30,7 @@
         }
     </style>
     <template>
-        <input is="iron-input" class="search-input" bind-value="{{keyword}}" placeholder="{{placeholder}}">
+        <input is="iron-input" id="txtSearch" class="search-input" bind-value="{{keyword}}" placeholder="{{placeholder}}">
         <iron-icon icon="search"></iron-icon>
         <paper-icon-button icon="clear" alt="clear" title="clear" tabindex="0" hidden$="{{!keyword}}" on-tap="_handleClear"></paper-icon-button>
     </template>
@@ -49,6 +49,7 @@
             },
             _handleClear: function() {
                 this.keyword = '';
+                this.$.txtSearch.focus();
             }
         });
     </script>
