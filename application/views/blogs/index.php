@@ -13,28 +13,11 @@ import('css/blogs/header');
             <div class="title">Đôi chân phi thường của cô gái Việt chinh phục sa mạc</div>
             <div class="description">Để vượt sa mạc Atacama - nơi có độ cao 3.200 m so với mực nước biển, Vũ Phương Thanh, sinh năm 1990 đã chạy, đi bộ 85-115km/tuần, rèn đôi chân hoạt động liên tục 12 tiếng/ngày.</div>
         </hot-blog>
-        <paper-menu class="blog-menu" selected="1">
-            <paper-icon-item activateEvent="alert('ok')">
-                <div class="avatar red" item-icon></div>
-                <div class="flex">Alphonso</div>
-                <iron-icon icon="communication:chat"></iron-icon>
-            </paper-icon-item>
-            <paper-icon-item>
-                <div class="avatar orange" item-icon></div>
-                <div class="flex">Andrews</div>
-                <iron-icon icon="communication:chat"></iron-icon>
-            </paper-icon-item>
-            <paper-icon-item>
-                <div class="avatar green" item-icon></div>
-                <div class="flex">Angela</div>
-                <iron-icon icon="communication:chat"></iron-icon>
-            </paper-icon-item>
-            <paper-icon-item>
-                <div class="avatar blue" item-icon></div>
-                <div class="flex">Lorem</div>
-                <iron-icon icon="communication:chat"></iron-icon>
-            </paper-icon-item>
-        </paper-menu>
+        <blog-menu class="blog-menu">
+            <blog-menu-item url="/cong-nghe" color="blue">Cong nghe</blog-menu-item>
+            <blog-menu-item url="/doi-song" color="red">Doi song</blog-menu-item>
+            <blog-menu-item url="/giai-tri" color="green">Giai tri</blog-menu-item>
+        </blog-menu>
     </div>
     <paper-header-panel main mode="waterfall">
         <paper-toolbar class="paper-header">

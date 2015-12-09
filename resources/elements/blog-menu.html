@@ -1,0 +1,31 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+
+<dom-module id="blog-menu">
+    <style is="custom">
+        :host {
+            @apply(--layout-vertical);
+            background-color: white;
+            width: 100%;
+            padding: 10px 0;
+        }
+    </style>
+    <template>
+        <content></content>
+    </template>
+    <script>
+        Polymer({
+            is: "blog-menu",
+            properties: {
+                url: {
+                    type: String,
+                    value: '/'
+                },
+                tooltip: {
+                    type: String,
+                    value: 'Gume'
+                }
+            }
+        });
+    </script>
+</dom-module>
