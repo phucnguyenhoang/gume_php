@@ -5,6 +5,11 @@
 <link rel="import" href="/resources/bower_components/paper-input/paper-input.html">
 <link rel="import" href="/resources/bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="/resources/bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="/resources/bower_components/iron-icons/communication-icons.html">
+<link rel="import" href="/resources/bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="/resources/bower_components/paper-menu/paper-menu.html">
+<link rel="import" href="/resources/bower_components/paper-item/paper-item.html">
+<link rel="import" href="/resources/bower_components/paper-item/paper-icon-item.html">
 
 <link rel="import" href="/resources/elements/app-logo.html">
 <link rel="import" href="/resources/elements/blog-search.html">
@@ -26,5 +31,35 @@
     }
     paper-toolbar .title {
         line-height: 1.1;
+    }
+
+    .blog-menu paper-item {
+        --paper-item: {
+             cursor: pointer;
+         };
+    }
+    .blog-menu .flex {
+        @apply(--layout-flex);
+    }
+    .blog-menu .avatar {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: #ccc;
+    }
+
+    .blog-menu .blue {
+        background-color: var(--paper-light-blue-300);
+    }
+    .blog-menu .red {
+        background-color: var(--paper-red-300);
+    }
+    .blog-menu .orange {
+        background-color: var(--paper-amber-300);
+    }
+    .blog-menu .green {
+        background-color: var(--paper-green-300);
     }
 </style>
