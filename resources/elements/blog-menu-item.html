@@ -9,6 +9,7 @@
     <style is="custom">
         :host {
             padding: 7px 10px;
+            background-color: var(--blog-menu-item-active);
         }
         a {
             @apply(--layout-horizontal);
@@ -16,7 +17,8 @@
             display: block;
             width: 100%;
             text-decoration: none;
-            color: var(--paper-grey-800);
+            color: var(--blog-menu-item-lable-color, #424242);
+            cursor: var(--blog-menu-item-cursor, pointer);
         }
         .label {
             width: 40px;
@@ -51,7 +53,7 @@
         }
     </style>
     <template>
-        <a href="{{url}}">
+        <a id="likBlogMenuItem" href="{{url}}">
             <div class$="{{computeClassName(color)}}">{{label}}</div>
             <div class="title">
                 <content id="content"></content>
@@ -77,18 +79,43 @@
                 color: {
                     type: String,
                     value: 'red'
+                },
+                active: {
+                    type: Boolean
                 }
+            },
+            listeners: {
+                'likBlogMenuItem.tap': '_activeItem'
             },
             computeClassName: function(color) {
                 return 'label ' + color;
             },
             ready: function () {
+                // make character avatar
                 var label = this.getContentChildNodes('#content')[0];
 
                 if (label !== undefined && label.textContent != '') {
                     label = label.textContent;
                     this.label = label.substring(0, 1);
                 }
+
+                // active menu item
+                if (this.active) {
+                    this._setItemActive();
+                }
+            },
+            _activeItem: function(e) {
+                if (this.active) {
+                    e.preventDefault();
+                    return false;
+                }
+                this._setItemActive();
+            },
+            _setItemActive: function() {
+                this.customStyle['--blog-menu-item-active'] = '#616161';
+                this.customStyle['--blog-menu-item-lable-color'] = 'white';
+                this.customStyle['--blog-menu-item-cursor'] = 'default';
+                this.updateStyles();
             }
         });
     </script>

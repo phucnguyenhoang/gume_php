@@ -15,7 +15,7 @@ import('css/blogs/header');
         </hot-blog>
         <blog-menu class="blog-menu">
             <blog-menu-item url="/cong-nghe" color="blue">Cong nghe</blog-menu-item>
-            <blog-menu-item url="/doi-song" color="red">Doi song</blog-menu-item>
+            <blog-menu-item url="/doi-song" color="red" active>Doi song</blog-menu-item>
             <blog-menu-item url="/giai-tri" color="green">Giai tri</blog-menu-item>
         </blog-menu>
     </div>
