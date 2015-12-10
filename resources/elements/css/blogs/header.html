@@ -5,6 +5,8 @@
 <link rel="import" href="/resources/bower_components/paper-input/paper-input.html">
 <link rel="import" href="/resources/bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="/resources/bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="/resources/bower_components/paper-card/paper-card.html">
+<link rel="import" href="/resources/bower_components/paper-button/paper-button.html">
 
 <link rel="import" href="/resources/elements/app-logo.html">
 <link rel="import" href="/resources/elements/blog-search.html">
@@ -30,5 +32,48 @@
     }
     paper-toolbar .title {
         line-height: 1.1;
+    }
+
+    .blog-item-box {
+        padding: 36px;
+    }
+    paper-card.blog-item {
+        @apply(--layout-self-start);
+        margin: 15px;
+    }
+    @media (max-width: 768px) {
+        paper-card.blog-item {
+            width: 100%;
+        }
+        .blog-item-box {
+            padding: 15px;
+        }
+        paper-card.blog-item {
+            margin: 15px auto;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 992px) {
+        paper-card.blog-item {
+            width: 76%;
+        }
+        paper-card.blog-item {
+            margin: 15px auto;
+        }
+    }
+    @media (min-width: 992px) and (max-width: 1200px) {
+        paper-card.blog-item {
+            width: 45%;
+        }
+        .blog-item-box {
+            padding: 25px;
+        }
+    }
+    @media (min-width: 1200px) {
+        paper-card.blog-item {
+            width: 30%;
+        }
+        .blog-item-box {
+            padding: 25px;
+        }
     }
 </style>
