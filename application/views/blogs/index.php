@@ -25,8 +25,56 @@ import('css/blogs/header');
             <div class="title"><?php echo lang('blogs'); ?></div>
             <paper-icon-button icon="more-vert" on-tap="moreAction"></paper-icon-button>
         </paper-toolbar>
-        <div class="content fit">
-            Main content
+        <div class="content horizontal layout start-justified wrap blog-item-box">
+            <paper-card heading="Titles AND images!" class="blog-item" image="http://placehold.it/350x150">
+                <div class="card-content">
+                    Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
+                </div>
+                <div class="card-actions">
+                    <paper-button>No</paper-button>
+                    <paper-button>Yes</paper-button>
+                </div>
+            </paper-card>
+
+            <paper-card heading="Titles AND images!" class="blog-item" image="http://placehold.it/350x150">
+                <div class="card-content">
+                    Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
+                </div>
+                <div class="card-actions">
+                    <paper-button>No</paper-button>
+                    <paper-button>Yes</paper-button>
+                </div>
+            </paper-card>
+
+            <paper-card heading="Titles AND images!" class="blog-item" image="http://placehold.it/350x150">
+                <div class="card-content">
+                    Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
+                </div>
+                <div class="card-actions">
+                    <paper-button>No</paper-button>
+                    <paper-button>Yes</paper-button>
+                </div>
+            </paper-card>
+
+            <paper-card heading="Titles AND images!" class="blog-item" image="http://placehold.it/350x150">
+                <div class="card-content">
+                    Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
+                </div>
+                <div class="card-actions">
+                    <paper-button>No</paper-button>
+                    <paper-button>Yes</paper-button>
+                </div>
+            </paper-card>
+
+            <paper-card heading="Titles AND images!" class="blog-item" image="http://placehold.it/350x150">
+                <div class="card-content">
+                    Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
+                </div>
+                <div class="card-actions">
+                    <paper-button>No</paper-button>
+                    <paper-button>Yes</paper-button>
+                </div>
+            </paper-card>
         </div>
     </paper-header-panel>
 </paper-drawer-panel>
