@@ -30,9 +30,12 @@ import('css/blogs/header');
                 <div class="card-content">
                     Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
                 </div>
-                <div class="card-actions">
-                    <paper-button>No</paper-button>
-                    <paper-button>Yes</paper-button>
+                <div class="card-actions horizontal layout">
+                    <paper-icon-button icon="favorite" title="favorite" id="btnAddToFavorite1"></paper-icon-button>
+                    <paper-badge label="10" for="btnAddToFavorite1"></paper-badge>
+                    <paper-icon-button icon="social:public" title="share" id="btnShare1"></paper-icon-button>
+                    <paper-badge label="5" for="btnShare1"></paper-badge>
+                    <paper-button class="flex"><iron-icon icon="link"></iron-icon> Xem</paper-button>
                 </div>
             </paper-card>
 
@@ -40,9 +43,12 @@ import('css/blogs/header');
                 <div class="card-content">
                     Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
                 </div>
-                <div class="card-actions">
-                    <paper-button>No</paper-button>
-                    <paper-button>Yes</paper-button>
+                <div class="card-actions horizontal layout">
+                    <paper-icon-button icon="favorite" title="favorite" id="btnAddToFavorite2"></paper-icon-button>
+                    <paper-badge label="10" for="btnAddToFavorite2"></paper-badge>
+                    <paper-icon-button icon="social:public" title="share" id="btnShare2"></paper-icon-button>
+                    <paper-badge label="5" for="btnShare2"></paper-badge>
+                    <paper-button class="flex"><iron-icon icon="link"></iron-icon> Xem</paper-button>
                 </div>
             </paper-card>
 
@@ -50,9 +56,12 @@ import('css/blogs/header');
                 <div class="card-content">
                     Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
                 </div>
-                <div class="card-actions">
-                    <paper-button>No</paper-button>
-                    <paper-button>Yes</paper-button>
+                <div class="card-actions horizontal layout">
+                    <paper-icon-button icon="favorite" title="favorite" id="btnAddToFavorite3"></paper-icon-button>
+                    <paper-badge label="10" for="btnAddToFavorite3"></paper-badge>
+                    <paper-icon-button icon="social:public" title="share" id="btnShare3"></paper-icon-button>
+                    <paper-badge label="5" for="btnShare3"></paper-badge>
+                    <paper-button class="flex"><iron-icon icon="link"></iron-icon> Xem</paper-button>
                 </div>
             </paper-card>
 
@@ -60,9 +69,12 @@ import('css/blogs/header');
                 <div class="card-content">
                     Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
                 </div>
-                <div class="card-actions">
-                    <paper-button>No</paper-button>
-                    <paper-button>Yes</paper-button>
+                <div class="card-actions horizontal layout">
+                    <paper-icon-button icon="favorite" title="favorite" id="btnAddToFavorite4"></paper-icon-button>
+                    <paper-badge label="10" for="btnAddToFavorite4"></paper-badge>
+                    <paper-icon-button icon="social:public" title="share" id="btnShare4"></paper-icon-button>
+                    <paper-badge label="5" for="btnShare4"></paper-badge>
+                    <paper-button class="flex"><iron-icon icon="link"></iron-icon> Xem</paper-button>
                 </div>
             </paper-card>
 
@@ -70,9 +82,12 @@ import('css/blogs/header');
                 <div class="card-content">
                     Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
                 </div>
-                <div class="card-actions">
-                    <paper-button>No</paper-button>
-                    <paper-button>Yes</paper-button>
+                <div class="card-actions horizontal layout">
+                    <paper-icon-button icon="favorite" title="favorite" id="btnAddToFavorite5"></paper-icon-button>
+                    <paper-badge label="10" for="btnAddToFavorite5"></paper-badge>
+                    <paper-icon-button icon="social:public" title="share" id="btnShare5"></paper-icon-button>
+                    <paper-badge label="5" for="btnShare5"></paper-badge>
+                    <paper-button class="flex"><iron-icon icon="link"></iron-icon> Xem</paper-button>
                 </div>
             </paper-card>
         </div>
