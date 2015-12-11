@@ -15,6 +15,7 @@
 <link rel="import" href="/resources/elements/hot-blog.html">
 <link rel="import" href="/resources/elements/blog-menu.html">
 <link rel="import" href="/resources/elements/blog-menu-item.html">
+<link rel="import" href="/resources/elements/blog-date.html">
 <style is="custom-style">
     paper-drawer-panel .pan-drawer {
         background-color: var(--paper-grey-200);
@@ -61,8 +62,19 @@
     }
 
     paper-card.blog-detail {
-        width: 90%;
-        margin: 25px auto;
+        width: 92%;
+        margin: 36px auto;
+    }
+    paper-card.blog-detail .card-content p.image-content {
+        text-align: center;
+    }
+    paper-card.blog-detail .card-content p.image-content img {
+        max-width: 100%;
+    }
+    paper-card.blog-detail .card-content p.image-content i {
+        display: block;
+        color: var(--secondary-text-color);
+        @apply(--paper-font-caption);
     }
 
     @media (max-width: 768px) {
@@ -74,6 +86,10 @@
         }
         paper-card.blog-item {
             margin: 15px auto;
+        }
+
+        paper-card.blog-detail .card-content p.image-content img {
+            width: 100%;
         }
     }
     @media (min-width: 768px) and (max-width: 992px) {

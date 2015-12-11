@@ -1,0 +1,24 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+
+<dom-module id="blog-date">
+    <style is="custom">
+        :host {
+            display: block;
+            margin-top: -30px;
+            margin-left: 5px;
+            color: var(--secondary-text-color);
+            @apply(--paper-font-caption);
+            @apply(--layout-horizontal);
+            @apply(--layout-center);
+        }
+    </style>
+    <template>
+        <iron-icon icon="label"></iron-icon><content></content>
+    </template>
+    <script>
+        Polymer({
+            is: "blog-date"
+        });
+    </script>
+</dom-module>
