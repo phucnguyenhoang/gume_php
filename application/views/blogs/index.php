@@ -1,5 +1,6 @@
 <?php
 import('css/blogs/header');
+import('js/blogs/header');
 ?>
 <paper-drawer-panel>
     <div drawer class="pan-drawer">
@@ -35,7 +36,7 @@ import('css/blogs/header');
                     <paper-badge label="10" for="btnAddToFavorite1"></paper-badge>
                     <paper-icon-button icon="social:public" title="share" id="btnShare1"></paper-icon-button>
                     <paper-badge label="5" for="btnShare1"></paper-badge>
-                    <paper-button class="flex"><iron-icon icon="link"></iron-icon> Xem</paper-button>
+                    <paper-button class="flex" link="/aa"><iron-icon icon="link"></iron-icon> Xem</paper-button>
                 </div>
             </paper-card>
 
@@ -48,7 +49,7 @@ import('css/blogs/header');
                     <paper-badge label="10" for="btnAddToFavorite2"></paper-badge>
                     <paper-icon-button icon="social:public" title="share" id="btnShare2"></paper-icon-button>
                     <paper-badge label="5" for="btnShare2"></paper-badge>
-                    <paper-button class="flex"><iron-icon icon="link"></iron-icon> Xem</paper-button>
+                    <paper-button class="flex" link="/bbb"><iron-icon icon="link"></iron-icon> Xem</paper-button>
                 </div>
             </paper-card>
 

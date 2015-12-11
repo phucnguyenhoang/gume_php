@@ -1,0 +1,10 @@
+<script>
+    window.addEventListener('WebComponentsReady', function(e) {
+        var btnBlogView = document.querySelectorAll('paper-button[link]');
+        for (var i = 0; i < btnBlogView.length; i++) {
+            btnBlogView[i].addEventListener('tap', function() {
+                window.location = this.getAttribute('link');
+            });
+        }
+    });
+</script>
