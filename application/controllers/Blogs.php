@@ -15,4 +15,11 @@ class Blogs extends CI_Controller {
         $this->load->view('blogs/index');
         $this->load->view('layout/footer');
     }
+
+    public function show($alias)
+    {
+        $this->load->view('layout/header');
+        $this->load->view('blogs/show');
+        $this->load->view('layout/footer');
+    }
 }

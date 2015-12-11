@@ -52,3 +52,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'blogs';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['cong-nghe/[a-zA-z0-9\-]+.html'] = 'blogs/show/$1';
