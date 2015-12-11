@@ -44,6 +44,17 @@
         margin: 15px;
         --paper-card-header-color: var(--paper-pink-500);
     }
+    paper-card.blog-item {
+        --paper-card-header-text: {
+             white-space: nowrap;
+             overflow: hidden;
+             text-overflow: ellipsis;
+             width: calc(100% - 32px);
+         };
+    }
+    paper-card.blog-item .card-content {
+        height: 155px;
+    }
     .card-actions paper-badge {
         margin-left: -5px;
         margin-top: 7px;
