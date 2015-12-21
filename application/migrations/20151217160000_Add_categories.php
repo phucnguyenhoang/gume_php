@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Migration_Add_blogs extends CI_Migration {
+class Migration_Add_categories extends CI_Migration {
 
     public function up()
     {
@@ -12,20 +12,11 @@ class Migration_Add_blogs extends CI_Migration {
                 'unsigned' => TRUE,
                 'auto_increment' => TRUE
             ),
-            'category_id' => array(
-                'type' => 'INT',
-                'constraint' => 5,
-                'unsigned' => TRUE
-            ),
             'alias' => array(
                 'type' => 'VARCHAR',
                 'constraint' => 250
             ),
-            'title' => array(
-                'type' => 'VARCHAR',
-                'constraint' => 250
-            ),
-            'description' => array(
+            'name' => array(
                 'type' => 'VARCHAR',
                 'constraint' => 250
             ),
@@ -33,9 +24,6 @@ class Migration_Add_blogs extends CI_Migration {
                 'type' => 'VARCHAR',
                 'constraint' => 250,
                 'null' => TRUE
-            ),
-            'content' => array(
-                'type' => 'TEXT'
             ),
             'is_publish' => array(
                 'type' => 'BOOLEAN',
@@ -54,11 +42,11 @@ class Migration_Add_blogs extends CI_Migration {
             )
         ));
         $this->dbforge->add_key('id', TRUE);
-        $this->dbforge->create_table('blogs');
+        $this->dbforge->create_table('categories');
     }
 
     public function down()
     {
-        $this->dbforge->drop_table('blogs');
+        $this->dbforge->drop_table('categories');
     }
 }
