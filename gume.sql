@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 24, 2015 at 11:23 AM
+-- Generation Time: Dec 24, 2015 at 12:15 PM
 -- Server version: 10.0.17-MariaDB
 -- PHP Version: 5.6.14
 
@@ -35,6 +35,7 @@ CREATE TABLE `blogs` (
   `thumb` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
   `content` text COLLATE utf8_unicode_ci NOT NULL,
   `is_publish` tinyint(4) NOT NULL DEFAULT '0',
+  `num_view` int(10) UNSIGNED DEFAULT '0',
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   `deleted_at` datetime DEFAULT NULL
@@ -68,6 +69,15 @@ CREATE TABLE `categories` (
   `updated_at` datetime NOT NULL,
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `alias`, `name`, `thumb`, `is_publish`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'cong-nghe', 'Công Nghệ', NULL, 1, '2015-12-24 04:12:16', '2015-12-24 04:12:16', NULL),
+(2, 'doi-song', 'Đời Sống', NULL, 1, '2015-12-24 04:12:16', '2015-12-24 04:12:16', NULL),
+(3, 'giai-tri', 'Giải Trí', NULL, 1, '2015-12-24 04:12:16', '2015-12-24 04:12:16', NULL);
 
 -- --------------------------------------------------------
 
@@ -134,7 +144,7 @@ ALTER TABLE `blog_tags`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tags`
 --
