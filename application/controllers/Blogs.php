@@ -11,15 +11,29 @@ class Blogs extends CI_Controller {
 
     public function index()
     {
+        $data = array();
+
+        $categories = $this->category->getAll(true);
+        $categoryColor = $this->category->color();
+        $data['categories'] = $categories;
+        $data['categoryColor'] = $categoryColor;
+
         $this->load->view('layout/header');
-        $this->load->view('blogs/index');
+        $this->load->view('blogs/index', $data);
         $this->load->view('layout/footer');
     }
 
     public function show($alias)
     {
+        $data = array();
+
+        $categories = $this->category->getAll(true);
+        $categoryColor = $this->category->color();
+        $data['categories'] = $categories;
+        $data['categoryColor'] = $categoryColor;
+
         $this->load->view('layout/header');
-        $this->load->view('blogs/show');
+        $this->load->view('blogs/show', $data);
         $this->load->view('layout/footer');
     }
 }
