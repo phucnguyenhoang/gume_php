@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 24, 2015 at 12:15 PM
+-- Generation Time: Dec 25, 2015 at 11:42 AM
 -- Server version: 10.0.17-MariaDB
 -- PHP Version: 5.6.14
 
@@ -40,6 +40,14 @@ CREATE TABLE `blogs` (
   `updated_at` datetime NOT NULL,
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `blogs`
+--
+
+INSERT INTO `blogs` (`id`, `category_id`, `alias`, `title`, `description`, `thumb`, `content`, `is_publish`, `num_view`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 2, 'doi-chan-phi-thuong-cua-co-gai-viet-chinh-phuc-sa-mac', 'Đôi chân phi thường của cô gái Việt chinh phục sa mạc', 'Để vượt sa mạc Atacama - nơi có độ cao 3.200 m so với mực nước biển, Vũ Phương Thanh, sinh năm 1990 đã chạy, đi bộ 85-115km/tuần, rèn đôi chân hoạt động liên tục 12 tiếng/ngày.', 'thanh-vu.jpg', 'Vũ Phương Thanh (Tang Vu) đã vượt qua 250 km trong giải chạy bền vượt sa mạc tại Chile. Trước đó, cô từng tham gia các cuộc thi: Ultra Marathon The North Face 100, bán Ironman ở Bintan, Indonesia...', 1, 100, '2015-12-25 03:11:15', '2015-12-25 03:11:15', NULL),
+(2, 2, '12-dia-diem-tham-quan-mien-phi-o-da-lat', '12 địa điểm tham quan miễn phí ở Đà Lạt', 'Cách trung tâm thành phố Đà Lạt 5 km, nằm trên núi Phụng Hoàng, đây là một trong những thiền viện lớn nhất của Việt Nam.', 'flower.jpg', 'Làng hoa Vạn Thành\r\n\r\nChạy theo đường 3/2, đến khách sạn Sài Gòn - Đà Lạt rẽ tay trái về hướng Cam Ly, bạn sẽ được chiêm ngưỡng làng hoa nổi tiếng và lâu đời nhất ở Đà Lạt. Các ruộng hoa và nhà kính với muôn vàn sắc hoa rực rỡ sẽ là phông nền đẹp cho những bức ảnh của bạn. Du khách cũng khó lòng rời khỏi nơi này khi bước chân bị níu giữ bởi hương thơm quyến rũ của “vương quốc” hoa.', 1, 50, '2015-12-25 06:17:32', '2015-12-25 06:17:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -134,7 +142,7 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `blog_tags`
 --
