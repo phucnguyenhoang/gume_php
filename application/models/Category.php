@@ -11,7 +11,6 @@ class Category extends CI_Model {
     {
         parent::__construct();
         $this->load->database();
-        $this->db->from('categories');
     }
 
     public function color() {
@@ -19,6 +18,7 @@ class Category extends CI_Model {
     }
 
     public function getAll($isPublish = null) {
+        $this->db->from('categories');
         if ($isPublish !== null) {
             $this->db->where('is_publish', $isPublish);
         }

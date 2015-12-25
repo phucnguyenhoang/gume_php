@@ -18,6 +18,9 @@ class Blogs extends CI_Controller {
         $data['categories'] = $categories;
         $data['categoryColor'] = $categoryColor;
 
+        $hotBlog = $this->blog->hot();
+        $data['hotBlog'] = $hotBlog;
+
         $this->load->view('layout/header');
         $this->load->view('blogs/index', $data);
         $this->load->view('layout/footer');
