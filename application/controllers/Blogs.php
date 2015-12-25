@@ -26,7 +26,7 @@ class Blogs extends CI_Controller {
         $this->load->view('layout/footer');
     }
 
-    public function show($alias)
+    public function show($category, $blog)
     {
         $data = array();
 

@@ -11,7 +11,7 @@ import('js/blogs/header');
         <?php if (!empty($hotBlog)) : ?>
             <hot-blog
                 thumb="/resources/img/blogs/<?php echo($hotBlog->id.'/'.$hotBlog->thumb); ?>"
-                src="/<?php echo $hotBlog->alias; ?>">
+                src="/<?php echo ($hotBlog->category.'/'.$hotBlog->alias); ?>.html">
                 <div class="title"><?php echo htmlspecialchars($hotBlog->title); ?></div>
                 <div class="description"><?php echo htmlspecialchars($hotBlog->description); ?></div>
             </hot-blog>

@@ -25,11 +25,11 @@
             @apply(--layout-center);
         }
         .blog-thumb {
-            width: 100%;
-            margin: auto;
-            -webkit-border-radius: 150px;
-            -moz-border-radius: 150px;
-            border-radius: 150px;
+            background-image: var(--hot-blog-thumb, none);
+            background-position: center;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
         .blog-content {
             width: 80%;
@@ -46,9 +46,7 @@
     </style>
     <template>
         <a href="{{src}}">
-            <paper-material elevation="2">
-                <img class="blog-thumb" src="{{thumb}}" title="">
-            </paper-material>
+            <paper-material class="blog-thumb" elevation="2"></paper-material>
             <div class="blog-content">
                 <content></content>
             </div>
@@ -66,6 +64,13 @@
                     type: String,
                     value: '#'
                 }
+            },
+            ready: function() {
+                this._setBlogThumb();
+            },
+            _setBlogThumb: function() {
+                this.customStyle['--hot-blog-thumb'] = 'url("' + this.thumb + '")';
+                this.updateStyles();
             }
         });
     </script>
