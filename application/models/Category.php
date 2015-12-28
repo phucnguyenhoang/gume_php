@@ -28,4 +28,16 @@ class Category extends CI_Model {
 
         return $query->result();
     }
+
+    public function getByAlias($alias, $isPublish = null) {
+        $this->db->from('categories');
+        $this->db->where('alias', $alias);
+        if ($isPublish !== null) {
+            $this->db->where('is_publish', $isPublish);
+        }
+        $this->db->where('deleted_at IS NULL', null, false);
+        $query = $this->db->get();
+
+        return $query->row();
+    }
 }
