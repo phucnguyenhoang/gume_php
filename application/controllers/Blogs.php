@@ -20,6 +20,8 @@ class Blogs extends CI_Controller {
 
         $hotBlog = $this->blog->hot();
         $data['hotBlog'] = $hotBlog;
+        $blogs = $this->blog->all(true);
+        $data['blogs'] = $blogs;
 
         $this->load->view('layout/header');
         $this->load->view('blogs/index', $data);

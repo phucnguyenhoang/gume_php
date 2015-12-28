@@ -38,70 +38,23 @@ import('js/blogs/header');
             <paper-icon-button icon="more-vert" on-tap="moreAction"></paper-icon-button>
         </paper-toolbar>
         <div class="content horizontal layout start-justified wrap blog-item-box">
-            <paper-card heading="Titles AND images!" class="blog-item" image="http://placehold.it/350x150">
-                <div class="card-content">
-                    Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
-                </div>
-                <div class="card-actions horizontal layout">
-                    <paper-icon-button icon="favorite" title="favorite" id="btnAddToFavorite1"></paper-icon-button>
-                    <paper-badge label="10" for="btnAddToFavorite1"></paper-badge>
-                    <paper-icon-button icon="social:public" title="share" id="btnShare1"></paper-icon-button>
-                    <paper-badge label="5" for="btnShare1"></paper-badge>
-                    <paper-button class="flex" link="/aa"><iron-icon icon="link"></iron-icon> Xem</paper-button>
-                </div>
-            </paper-card>
-
-            <paper-card heading="Titles AND images!" class="blog-item" image="http://placehold.it/350x150">
-                <div class="card-content">
-                    Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
-                </div>
-                <div class="card-actions horizontal layout">
-                    <paper-icon-button icon="favorite" title="favorite" id="btnAddToFavorite2"></paper-icon-button>
-                    <paper-badge label="10" for="btnAddToFavorite2"></paper-badge>
-                    <paper-icon-button icon="social:public" title="share" id="btnShare2"></paper-icon-button>
-                    <paper-badge label="5" for="btnShare2"></paper-badge>
-                    <paper-button class="flex" link="/bbb"><iron-icon icon="link"></iron-icon> Xem</paper-button>
-                </div>
-            </paper-card>
-
-            <paper-card heading="Titles AND images!" class="blog-item" image="http://placehold.it/350x150">
-                <div class="card-content">
-                    Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
-                </div>
-                <div class="card-actions horizontal layout">
-                    <paper-icon-button icon="favorite" title="favorite" id="btnAddToFavorite3"></paper-icon-button>
-                    <paper-badge label="10" for="btnAddToFavorite3"></paper-badge>
-                    <paper-icon-button icon="social:public" title="share" id="btnShare3"></paper-icon-button>
-                    <paper-badge label="5" for="btnShare3"></paper-badge>
-                    <paper-button class="flex"><iron-icon icon="link"></iron-icon> Xem</paper-button>
-                </div>
-            </paper-card>
-
-            <paper-card heading="Titles AND images!" class="blog-item" image="http://placehold.it/350x150">
-                <div class="card-content">
-                    Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
-                </div>
-                <div class="card-actions horizontal layout">
-                    <paper-icon-button icon="favorite" title="favorite" id="btnAddToFavorite4"></paper-icon-button>
-                    <paper-badge label="10" for="btnAddToFavorite4"></paper-badge>
-                    <paper-icon-button icon="social:public" title="share" id="btnShare4"></paper-icon-button>
-                    <paper-badge label="5" for="btnShare4"></paper-badge>
-                    <paper-button class="flex"><iron-icon icon="link"></iron-icon> Xem</paper-button>
-                </div>
-            </paper-card>
-
-            <paper-card heading="Titles AND images!" class="blog-item" image="http://placehold.it/350x150">
-                <div class="card-content">
-                    Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
-                </div>
-                <div class="card-actions horizontal layout">
-                    <paper-icon-button icon="favorite" title="favorite" id="btnAddToFavorite5"></paper-icon-button>
-                    <paper-badge label="10" for="btnAddToFavorite5"></paper-badge>
-                    <paper-icon-button icon="social:public" title="share" id="btnShare5"></paper-icon-button>
-                    <paper-badge label="5" for="btnShare5"></paper-badge>
-                    <paper-button class="flex"><iron-icon icon="link"></iron-icon> Xem</paper-button>
-                </div>
-            </paper-card>
+            <?php if (count($blogs) > 0) : ?>
+                <?php foreach ($blogs as $blog) : ?>
+                    <?php if (!empty($hotBlog) && $hotBlog->id == $blog->id) continue; ?>
+                    <paper-card heading="<?php echo $blog->title; ?>" class="blog-item" image="/resources/img/blogs/<?php echo($blog->id.'/'.$blog->thumb); ?>">
+                        <div class="card-content">
+                            <?php echo $blog->description; ?>
+                        </div>
+                        <div class="card-actions horizontal layout">
+                            <paper-icon-button icon="favorite" title="favorite" id="btnAddToFavorite<?php echo $blog->id; ?>"></paper-icon-button>
+                            <paper-badge label="10" for="btnAddToFavorite<?php echo $blog->id; ?>"></paper-badge>
+                            <paper-icon-button icon="social:public" title="share" id="btnShare<?php echo $blog->id; ?>"></paper-icon-button>
+                            <paper-badge label="5" for="btnShare<?php echo $blog->id; ?>"></paper-badge>
+                            <paper-button class="flex" link="/<?php echo ($blog->category.'/'.$blog->alias); ?>.html"><iron-icon icon="link"></iron-icon> Xem</paper-button>
+                        </div>
+                    </paper-card>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
     </paper-header-panel>
 </paper-drawer-panel>
