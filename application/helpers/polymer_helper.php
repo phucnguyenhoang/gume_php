@@ -32,3 +32,8 @@ function using($path) {
 
     echo $html;
 }
+
+function gotoUrl($url = '/') {
+    header('Location: '.$url);
+    exit;
+}
