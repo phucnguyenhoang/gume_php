@@ -13,7 +13,8 @@ class User extends CI_Model
         $this->db->where('password', $password);
         $this->db->where('active', true);
         $this->db->where('deleted_at IS NULL', null, false);
+        $query = $this->db->get();
 
-        return $this->db->count_all_results();
+        return $query->row_array();
     }
 }

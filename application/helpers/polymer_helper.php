@@ -37,3 +37,19 @@ function gotoUrl($url = '/') {
     header('Location: '.$url);
     exit;
 }
+
+function auth($key = null) {
+    $CI =& get_instance();
+
+    $CI->load->library('session');
+    if (($CI->session->has_userdata('admin_logged_in') && $CI->session->userdata('admin_logged_in') == true)) {
+        $auth = $CI->session->userdata('auth');
+        if (!empty($key)) {
+            return $auth[$key];
+        } else {
+            return $auth['name'];
+        }
+    }
+
+    return null;
+}
