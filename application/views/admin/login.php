@@ -86,7 +86,7 @@
             </form>
         </div>
         <div class="card-actions">
-            <paper-button><?php echo lang('cancel'); ?></paper-button>
+            <paper-button onclick="cancelLogin()"><?php echo lang('cancel'); ?></paper-button>
             <paper-button onclick="login()"><iron-icon icon="send"></iron-icon> <?php echo lang('login'); ?></paper-button>
         </div>
     </paper-card>
@@ -108,6 +108,9 @@
             }
 
             document.getElementById('frmLogin').submit();
+        }
+        function cancelLogin() {
+            window.location = '/';
         }
     </script>
 </body>
