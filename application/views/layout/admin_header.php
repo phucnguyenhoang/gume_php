@@ -23,20 +23,28 @@
     <paper-toolbar class="paper-header">
         <paper-icon-button icon="home" id="btnAdminHome"></paper-icon-button>
         <div class="title"><?php echo lang('dashboard'); ?></div>
-        <paper-icon-button icon="more-vert"></paper-icon-button>
+        <paper-menu-button horizontal-offset="-70">
+            <paper-icon-button icon="more-vert" class="dropdown-trigger"></paper-icon-button>
+            <paper-menu class="dropdown-content right-control">
+                <paper-item url="/" target="_blank" on-tap="goToUrl">Go to website</paper-item>
+                <paper-item url="/admin/logout" on-tap="goToUrl">Logout</paper-item>
+            </paper-menu>
+        </paper-menu-button>
         <?php
             $selectedMenu = array(
-                'blog' => 0,
-                'category' => 1,
-                'tag' => 2
+                'home' => 0,
+                'blog' => 1,
+                'category' => 2,
+                'tag' => 3
             );
         $segment = $this->uri->segment(2);
+        if (empty($segment))  $segment = 'home';
         ?>
         <paper-tabs class="bottom" id="adminMainMenu" on-iron-select="changeTab" <?php echo (isset($selectedMenu[$segment]) ? 'selected="'.$selectedMenu[$segment].'"' : ''); ?>>
+            <paper-tab <?php echo ($segment == 'home' ? '' : 'url="/admin"'); ?>>DASHBOARD</paper-tab>
             <paper-tab <?php echo ($segment == 'blog' ? '' : 'url="/admin/blog"'); ?>>BLOG</paper-tab>
             <paper-tab <?php echo ($segment == 'category' ? '' : 'url="/admin/category"'); ?>>CATEGORY</paper-tab>
             <paper-tab <?php echo ($segment == 'tag' ? '' : 'url="/admin/tag"'); ?>>TAG</paper-tab>
         </paper-tabs>
     </paper-toolbar>
     <div class="content fit">
-        <div style="height: 800px;"></div>

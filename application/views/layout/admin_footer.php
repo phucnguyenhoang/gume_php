@@ -23,6 +23,20 @@
             }, 300);
         }
     };
+    App.goToUrl = function(event) {
+        var url = event.target.getAttribute('url'),
+            target = event.target.getAttribute('target');
+        if (url !== null && url != '') {
+            window.setTimeout(function() {
+                if (target !== null && target != '') {
+                    var win = window.open(url, target);
+                    win.focus();
+                } else {
+                    window.location = url;
+                }
+            }, 300);
+        }
+    };
 </script>
 </template>
 </body>
