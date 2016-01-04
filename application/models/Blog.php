@@ -1,6 +1,8 @@
 <?php
 class Blog extends CI_Model {
 
+    private $numViewIsNew = 20;
+
     public function __construct() {
         parent::__construct();
         $this->load->database();
@@ -61,5 +63,14 @@ class Blog extends CI_Model {
         $query = $this->db->get();
 
         return $query->result();
+    }
+
+    public function countNewByCategory($id) {
+        $this->db->from('blogs');
+        $this->db->where('blogs.category_id', $id);
+        $this->db->where('blogs.num_view <=', $this->numViewIsNew);
+        $this->db->where('blogs.deleted_at IS NULL', null, false);
+
+        return $this->db->count_all_results();
     }
 }

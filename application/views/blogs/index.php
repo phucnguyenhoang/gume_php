@@ -26,7 +26,11 @@ import('js/blogs/header');
                         $color = $categoryColor[array_rand($categoryColor)];
                     }
                     ?>
-                    <blog-menu-item url="/<?php echo $category->alias; ?>" color="<?php echo $color; ?>" <?php echo ($category->alias == $this->uri->segment(1) ? 'active' : ''); ?>><?php echo $category->name; ?></blog-menu-item>
+                    <blog-menu-item
+                        url="/<?php echo $category->alias; ?>"
+                        color="<?php echo $color; ?>"
+                        num-new=<?php echo $category->num_new; ?>
+                        <?php echo ($category->alias == $this->uri->segment(1) ? 'active' : ''); ?>><?php echo $category->name; ?></blog-menu-item>
                 <?php endforeach; ?>
             </blog-menu>
         <?php endif; ?>

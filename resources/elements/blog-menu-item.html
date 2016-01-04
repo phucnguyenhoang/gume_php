@@ -60,7 +60,9 @@
             </div>
             <div class="notify">
                 <iron-icon icon="communication:chat"></iron-icon>
-                <paper-badge label="3"></paper-badge>
+                <template is="dom-if" if="{{numNew}}">
+                    <paper-badge label="{{numNew}}"></paper-badge>
+                </template>
             </div>
         </a>
     </template>
@@ -75,6 +77,10 @@
                 label: {
                     type: String,
                     value: ''
+                },
+                numNew: {
+                    type: Number,
+                    value: 0
                 },
                 color: {
                     type: String,

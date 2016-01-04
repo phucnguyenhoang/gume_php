@@ -14,6 +14,9 @@ class Blogs extends CI_Controller {
         $data = array();
 
         $categories = $this->category->getAll(true);
+        foreach ($categories as $k => $category) {
+            $categories[$k]->num_new = $this->blog->countNewByCategory($category->id);
+        }
         $categoryColor = $this->category->color();
         $data['categories'] = $categories;
         $data['categoryColor'] = $categoryColor;
@@ -33,6 +36,14 @@ class Blogs extends CI_Controller {
         $data = array();
 
         $categories = $this->category->getAll(true);
+        foreach ($categories as $k => $cat) {
+            $categories[$k]->num_new = $this->blog->countNewByCategory($cat->id);
+        }
+        $hotBlog = $this->blog->hot();
+        if ($hotBlog->alias == $blog) {
+            $hotBlog = $this->blog->hot(2);
+        }
+        $data['hotBlog'] = $hotBlog;
         $categoryColor = $this->category->color();
         $data['categories'] = $categories;
         $data['categoryColor'] = $categoryColor;
@@ -51,6 +62,9 @@ class Blogs extends CI_Controller {
         if (empty($category)) show_404();
 
         $categories = $this->category->getAll(true);
+        foreach ($categories as $k => $category) {
+            $categories[$k]->num_new = $this->blog->countNewByCategory($category->id);
+        }
         $categoryColor = $this->category->color();
         $data['categories'] = $categories;
         $data['categoryColor'] = $categoryColor;

@@ -8,12 +8,14 @@ import('js/blogs/header');
             <app-logo></app-logo>
         </paper-toolbar>
         <blog-search placeholder="Tim kiem"></blog-search>
-        <hot-blog
-            thumb="http://img.v3.news.zdn.vn/w660/Uploaded/nutmjz/2015_12_02/12319798_10204788201299254_1637655560_n.jpg"
-            src="http://news.zing.vn/Doi-chan-phi-thuong-cua-co-gai-Viet-chinh-phuc-sa-mac-post606705.html">
-            <div class="title">Đôi chân phi thường của cô gái Việt chinh phục sa mạc</div>
-            <div class="description">Để vượt sa mạc Atacama - nơi có độ cao 3.200 m so với mực nước biển, Vũ Phương Thanh, sinh năm 1990 đã chạy, đi bộ 85-115km/tuần, rèn đôi chân hoạt động liên tục 12 tiếng/ngày.</div>
-        </hot-blog>
+        <?php if (!empty($hotBlog)) : ?>
+            <hot-blog
+                thumb="/resources/img/blogs/<?php echo($hotBlog->id.'/'.$hotBlog->thumb); ?>"
+                src="/<?php echo ($hotBlog->category.'/'.$hotBlog->alias); ?>.html">
+                <div class="title"><?php echo htmlspecialchars($hotBlog->title); ?></div>
+                <div class="description"><?php echo htmlspecialchars($hotBlog->description); ?></div>
+            </hot-blog>
+        <?php endif; ?>
         <?php if (count($categories) > 0) : ?>
             <blog-menu class="blog-menu">
                 <?php foreach ($categories as $category) : ?>
@@ -24,7 +26,11 @@ import('js/blogs/header');
                         $color = $categoryColor[array_rand($categoryColor)];
                     }
                     ?>
-                    <blog-menu-item url="/<?php echo $category->alias; ?>" color="<?php echo $color; ?>" <?php echo ($category->alias == $this->uri->segment(1) ? 'active' : ''); ?>><?php echo $category->name; ?></blog-menu-item>
+                    <blog-menu-item
+                        url="/<?php echo $category->alias; ?>"
+                        color="<?php echo $color; ?>"
+                        num-new=<?php echo $category->num_new; ?>
+                        <?php echo ($category->alias == $this->uri->segment(1) ? 'active' : ''); ?>><?php echo $category->name; ?></blog-menu-item>
                 <?php endforeach; ?>
             </blog-menu>
         <?php endif; ?>

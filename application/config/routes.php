@@ -55,5 +55,5 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['admin'] = 'admin';
 
-$route['[a-zA-z0-9\-]+/[a-zA-z0-9\-]+.html'] = 'blogs/show/$1/$2';
+$route['([a-zA-z0-9\-]+)/([a-zA-z0-9\-]+).html'] = 'blogs/show/$1/$2';
 $route['([a-zA-z0-9\-]+)'] = 'blogs/category/$1';
