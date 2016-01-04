@@ -4,4 +4,20 @@
             window.location = '/admin';
         });
     });
+
+    function goToUrl(element) {
+        var url = element.getAttribute('url'),
+                target = element.getAttribute('target');
+        console.log(element, url, target);
+        if (url !== null && url != '') {
+            window.setTimeout(function() {
+                if (target !== null && target != '') {
+                    var win = window.open(url, target);
+                    win.focus();
+                } else {
+                    window.location = url;
+                }
+            }, 300);
+        }
+    }
 </script>

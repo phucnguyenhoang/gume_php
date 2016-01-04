@@ -22,7 +22,12 @@
 <paper-header-panel mode="waterfall-tall" tall-class="medium-tall" on-content-scroll="hideMenu">
     <paper-toolbar class="paper-header">
         <paper-icon-button icon="home" id="btnAdminHome"></paper-icon-button>
-        <div class="title"><?php echo lang('dashboard'); ?></div>
+        <div class="title">Gume administration</div>
+        <?php if (!empty($control)) : ?>
+            <?php foreach ($control as $icon => $url) : ?>
+                <paper-icon-button icon="<?php echo $icon; ?>" url="<?php echo $url; ?>" onclick="goToUrl(this)"></paper-icon-button>
+            <?php endforeach; ?>
+        <?php endif; ?>
         <paper-menu-button horizontal-offset="-70">
             <paper-icon-button icon="more-vert" class="dropdown-trigger"></paper-icon-button>
             <paper-menu class="dropdown-content right-control">
@@ -40,11 +45,11 @@
         $segment = $this->uri->segment(2);
         if (empty($segment))  $segment = 'home';
         ?>
-        <paper-tabs class="bottom" id="adminMainMenu" on-iron-select="changeTab" <?php echo (isset($selectedMenu[$segment]) ? 'selected="'.$selectedMenu[$segment].'"' : ''); ?>>
-            <paper-tab <?php echo ($segment == 'home' ? '' : 'url="/admin"'); ?>>DASHBOARD</paper-tab>
-            <paper-tab <?php echo ($segment == 'blog' ? '' : 'url="/admin/blog"'); ?>>BLOG</paper-tab>
-            <paper-tab <?php echo ($segment == 'category' ? '' : 'url="/admin/category"'); ?>>CATEGORY</paper-tab>
-            <paper-tab <?php echo ($segment == 'tag' ? '' : 'url="/admin/tag"'); ?>>TAG</paper-tab>
+        <paper-tabs class="bottom" id="adminMainMenu" <?php echo (isset($selectedMenu[$segment]) ? 'selected="'.$selectedMenu[$segment].'"' : ''); ?>>
+            <paper-tab url="/admin" onclick="goToUrl(this)">DASHBOARD</paper-tab>
+            <paper-tab url="/admin/blog" onclick="goToUrl(this)">BLOG</paper-tab>
+            <paper-tab url="/admin/category" onclick="goToUrl(this)">CATEGORY</paper-tab>
+            <paper-tab url="/admin/tag" onclick="goToUrl(this)">TAG</paper-tab>
         </paper-tabs>
     </paper-toolbar>
     <div class="content fit">

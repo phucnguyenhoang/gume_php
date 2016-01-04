@@ -20,7 +20,10 @@ class Admin extends CI_Controller
     }
 
     public function blog() {
-        $this->load->view('layout/admin_header');
+        $control = array(
+            'add' => '/admin/blog/create'
+        );
+        $this->load->view('layout/admin_header', array('control' => $control));
         $this->load->view('admin/blog');
         $this->load->view('layout/admin_footer');
     }
