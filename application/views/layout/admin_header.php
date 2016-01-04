@@ -18,11 +18,17 @@
     <?php import('js/admin'); ?>
 </head>
 <body class="fullbleed vertical layout">
-
-<paper-header-panel mode="waterfall">
+<template is="dom-bind" id="adminPanel">
+<paper-header-panel mode="waterfall-tall" tall-class="medium-tall" on-content-scroll="hideMenu">
     <paper-toolbar class="paper-header">
         <paper-icon-button icon="home" id="btnAdminHome"></paper-icon-button>
         <div class="title"><?php echo lang('dashboard'); ?></div>
         <paper-icon-button icon="more-vert"></paper-icon-button>
+        <paper-tabs class="bottom" id="adminMainMenu" on-iron-select="changeTab">
+            <paper-tab url="<?php echo ($this->uri->segment(2) == 'blog' ? '' : '/admin/blog'); ?>">BLOG</paper-tab>
+            <paper-tab url="<?php echo ($this->uri->segment(2) == 'category' ? '' : '/admin/category'); ?>">CATEGORY</paper-tab>
+            <paper-tab url="<?php echo ($this->uri->segment(2) == 'tag' ? '' : '/admin/tag'); ?>">TAG</paper-tab>
+        </paper-tabs>
     </paper-toolbar>
     <div class="content fit">
+        <div style="height: 800px;"></div>
