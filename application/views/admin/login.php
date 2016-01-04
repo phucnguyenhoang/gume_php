@@ -75,12 +75,12 @@
     <paper-card heading="<?php echo lang('login_title') ?>" elevation="3">
         <div class="card-content">
             <form method="post" action="/admin/auth" accept-charset="utf-8" id="frmLogin">
-                <paper-input class="short" label="<?php echo lang('email'); ?>" id="txtEmail" type="email" name="email" required auto-validate error-message="<?php echo lang('email_required'); ?>" char-counter maxlength="250" autofocus>
+                <paper-input class="short" label="<?php echo lang('email'); ?>" id="txtEmail" type="email" name="email" required auto-validate error-message="<?php echo lang('email_required'); ?>" char-counter maxlength="250" autofocus onkeypress="checkLogin(event.keyCode)">
                     <iron-icon icon="mail" prefix></iron-icon>
-                    <paper-icon-button class="clearInput" suffix onclick="clearInput()" icon="clear" alt="clear" title="clear"></paper-icon-button>
+                    <paper-icon-button class="clearInput" suffix onclick="clearInput()" icon="clear" alt="clear" title="clear" tabindex="100"></paper-icon-button>
                 </paper-input>
 
-                <paper-input class="short" label="<?php echo lang('password'); ?>" id="txtPassword" type="password" name="password" required auto-validate error-message="<?php echo lang('password_required'); ?>" char-counter maxlength="100">
+                <paper-input class="short" label="<?php echo lang('password'); ?>" id="txtPassword" type="password" name="password" required auto-validate error-message="<?php echo lang('password_required'); ?>" char-counter maxlength="100" onkeypress="checkLogin(event.keyCode)">
                     <iron-icon icon="lock" prefix></iron-icon>
                 </paper-input>
             </form>
@@ -108,6 +108,11 @@
             }
 
             document.getElementById('frmLogin').submit();
+        }
+        function checkLogin(keyCode) {
+            if (keyCode == 13) {
+                login();
+            }
         }
         function cancelLogin() {
             window.location = '/';
