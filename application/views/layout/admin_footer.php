@@ -17,8 +17,10 @@
     };
     App.changeTab = function(event) {
         var url = event.target.selectedItem.getAttribute('url');
-        if (url != '') {
-            window.location = url;
+        if (url !== null && url != '') {
+            window.setTimeout(function() {
+                window.location = url;
+            }, 300);
         }
     };
 </script>

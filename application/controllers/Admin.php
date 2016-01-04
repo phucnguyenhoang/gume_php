@@ -19,6 +19,24 @@ class Admin extends CI_Controller
         $this->load->view('layout/admin_footer');
     }
 
+    public function blog() {
+        $this->load->view('layout/admin_header');
+        $this->load->view('admin/blog');
+        $this->load->view('layout/admin_footer');
+    }
+
+    public function category() {
+        $this->load->view('layout/admin_header');
+        $this->load->view('admin/blog');
+        $this->load->view('layout/admin_footer');
+    }
+
+    public function tag() {
+        $this->load->view('layout/admin_header');
+        $this->load->view('admin/blog');
+        $this->load->view('layout/admin_footer');
+    }
+
     public function login() {
         if ($this->_checkLogin()) {
             gotoUrl('/admin');

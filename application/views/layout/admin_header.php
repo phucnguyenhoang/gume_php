@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,10 +24,18 @@
         <paper-icon-button icon="home" id="btnAdminHome"></paper-icon-button>
         <div class="title"><?php echo lang('dashboard'); ?></div>
         <paper-icon-button icon="more-vert"></paper-icon-button>
-        <paper-tabs class="bottom" id="adminMainMenu" on-iron-select="changeTab">
-            <paper-tab url="<?php echo ($this->uri->segment(2) == 'blog' ? '' : '/admin/blog'); ?>">BLOG</paper-tab>
-            <paper-tab url="<?php echo ($this->uri->segment(2) == 'category' ? '' : '/admin/category'); ?>">CATEGORY</paper-tab>
-            <paper-tab url="<?php echo ($this->uri->segment(2) == 'tag' ? '' : '/admin/tag'); ?>">TAG</paper-tab>
+        <?php
+            $selectedMenu = array(
+                'blog' => 0,
+                'category' => 1,
+                'tag' => 2
+            );
+        $segment = $this->uri->segment(2);
+        ?>
+        <paper-tabs class="bottom" id="adminMainMenu" on-iron-select="changeTab" <?php echo (isset($selectedMenu[$segment]) ? 'selected="'.$selectedMenu[$segment].'"' : ''); ?>>
+            <paper-tab <?php echo ($segment == 'blog' ? '' : 'url="/admin/blog"'); ?>>BLOG</paper-tab>
+            <paper-tab <?php echo ($segment == 'category' ? '' : 'url="/admin/category"'); ?>>CATEGORY</paper-tab>
+            <paper-tab <?php echo ($segment == 'tag' ? '' : 'url="/admin/tag"'); ?>>TAG</paper-tab>
         </paper-tabs>
     </paper-toolbar>
     <div class="content fit">
