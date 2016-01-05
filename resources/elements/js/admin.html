@@ -55,8 +55,11 @@
             document.getElementById('msgImageRequired').open();
             return;
         }
+
         if (title.validate() && alias.validate() && description.validate() && tag.validate() && category.validate() && content.validate()) {
-            document.getElementById('frmBlogCreate').submit();
+            var ajax = document.getElementById('ajaxCheckAlias');
+            ajax.body = JSON.stringify({alias: alias.value});
+            ajax.generateRequest();
         } else {
             document.getElementById('msgErrorOccur').open();
         }

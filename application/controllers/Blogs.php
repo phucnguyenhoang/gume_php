@@ -117,4 +117,20 @@ class Blogs extends CI_Controller {
         $this->session->set_flashdata('create_blog_success', true);
         gotoUrl('/admin/blog');
     }
+
+    public function check_alias() {
+        if ($this->input->method() != 'post') show_404();
+
+        $data = file_get_contents("php://input");
+        $data = json_decode($data, true);
+        $alias = $data['alias'];
+        $respond = array(
+            'status' => false
+        );
+        if ($this->blog->checkAliasUnique($alias)) {
+            $respond['status'] = true;
+        }
+
+        renderJson($respond);
+    }
 }

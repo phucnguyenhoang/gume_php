@@ -74,6 +74,13 @@ class Blog extends CI_Model {
         return $this->db->count_all_results();
     }
 
+    public function checkAliasUnique($alias) {
+        $this->db->from('blogs');
+        $this->db->where('alias', $alias);
+
+        return ($this->db->count_all_results() > 0 ? false : true);
+    }
+
     public function createBlog($data) {
         $this->db->trans_begin();
         if (!empty($data['is_publish']) && $data['is_publish'] == 'true') {

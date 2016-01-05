@@ -7,6 +7,12 @@
 <?php if (!empty($this->session->flashdata('create_blog_success'))) : ?>
     <paper-toast class="success" id="toastCreateBlogSuccess" text="Create blog successfully!" opened></paper-toast>
 <?php endif; ?>
+<iron-ajax id="ajaxCheckAlias"
+    url="/blogs/check_alias"
+    method = 'POST'
+    handle-as="json"
+    on-response="handleResponse"
+    debounce-duration="300"></iron-ajax>
 <script>
     var App = document.querySelector('#adminPanel');
     App.hideMenu = function (event) {
@@ -42,6 +48,16 @@
                 }
             }, 300);
         }
+    };
+    App.handleResponse = function(e, data) {
+        var res = data.xhr.response;
+        if (res.status) {
+            document.getElementById('frmBlogCreate').submit();
+            return true;
+        }
+
+        document.getElementById('msgAliasExisted').open();
+        return false;
     };
 </script>
 </template>

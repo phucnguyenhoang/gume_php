@@ -33,4 +33,5 @@
     </div>
     <paper-toast id="msgImageRequired" class="error" text="Please select image!"></paper-toast>
     <paper-toast id="msgErrorOccur" class="error" text="An error occur, please check and fix it!"></paper-toast>
+    <paper-toast id="msgAliasExisted" class="error" text="Blog alias already exited. Please use another!"></paper-toast>
 </div>
