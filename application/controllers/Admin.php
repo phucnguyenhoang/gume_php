@@ -20,11 +20,31 @@ class Admin extends CI_Controller
     }
 
     public function blog() {
+        $header = array(
+            'title' => 'Blog list'
+        );
+
         $control = array(
             'add' => '/admin/blog/create'
         );
-        $this->load->view('layout/admin_header', array('control' => $control));
+        $header['control'] = $control;
+        $this->load->view('layout/admin_header', $header);
         $this->load->view('admin/blog');
+        $this->load->view('layout/admin_footer');
+    }
+
+    public function blog_create() {
+        $header = array(
+            'title' => 'Blog create'
+        );
+
+        $control = array(
+            'arrow-back' => '/admin/blog'
+        );
+        $header['control'] = $control;
+
+        $this->load->view('layout/admin_header', $header);
+        $this->load->view('admin/blog_create');
         $this->load->view('layout/admin_footer');
     }
 
