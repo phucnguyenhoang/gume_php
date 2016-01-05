@@ -46,7 +46,7 @@
         if (empty($segment))  $segment = 'home';
         ?>
         <paper-tabs class="bottom" id="adminMainMenu" <?php echo (isset($selectedMenu[$segment]) ? 'selected="'.$selectedMenu[$segment].'"' : ''); ?>>
-            <paper-tab url="/admin" onclick="goToUrl(this)">DASHBOARD</paper-tab>
+            <paper-tab url="/admin" onclick="goToUrl(this)">HOME</paper-tab>
             <paper-tab url="/admin/blog" onclick="goToUrl(this)">BLOG</paper-tab>
             <paper-tab url="/admin/category" onclick="goToUrl(this)">CATEGORY</paper-tab>
             <paper-tab url="/admin/tag" onclick="goToUrl(this)">TAG</paper-tab>

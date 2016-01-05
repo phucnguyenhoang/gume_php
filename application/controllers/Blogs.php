@@ -78,4 +78,21 @@ class Blogs extends CI_Controller {
         $this->load->view('blogs/category', $data);
         $this->load->view('layout/footer');
     }
+
+    public function store() {
+        if ($this->input->method() != 'post') show_404();
+        /*$this->load->library('image_lib');
+        $config['image_library'] = 'gd2';
+        $config['source_image'] = '/path/to/image/mypic.jpg';
+        $config['create_thumb'] = TRUE;
+        $config['maintain_ratio'] = TRUE;
+        $config['width']         = 75;
+        $config['height']       = 50;
+
+        $this->load->library('image_lib', $config);
+
+        $this->image_lib->resize();*/
+
+        var_dump($this->input->post());
+    }
 }
