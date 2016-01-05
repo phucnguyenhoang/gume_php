@@ -81,18 +81,40 @@ class Blogs extends CI_Controller {
 
     public function store() {
         if ($this->input->method() != 'post') show_404();
-        /*$this->load->library('image_lib');
-        $config['image_library'] = 'gd2';
-        $config['source_image'] = '/path/to/image/mypic.jpg';
-        $config['create_thumb'] = TRUE;
-        $config['maintain_ratio'] = TRUE;
-        $config['width']         = 75;
-        $config['height']       = 50;
 
-        $this->load->library('image_lib', $config);
+        $data = $this->input->post();
+        $imageName = uniqid('gume_');
+        $tmpImgName = $_FILES['thumb']['name'];
+        $data['thumb'] = $imageName.substr($tmpImgName, stripos($tmpImgName, '.'));
+        $newBlogId = $this->blog->createBlog($data);
 
-        $this->image_lib->resize();*/
+        /* upload image */
+        $imagePath = 'resources/img/blogs/'.$newBlogId;
+        if (!is_dir ($imagePath)) {
+            mkdir($imagePath, 0777);
+        }
+        $config['upload_path']          = $imagePath;
+        $config['file_name']            = $imageName;
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['max_size']             = 10240;
 
-        var_dump($this->input->post());
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('thumb')) {
+            $image = $this->upload->data();
+            /* make image thumb */
+            $config['image_library'] = 'gd2';
+            $config['source_image'] = $imagePath.'/'.$image['file_name'];
+            $config['create_thumb'] = TRUE;
+            $config['maintain_ratio'] = TRUE;
+            $config['width']         = 400;
+
+            $this->load->library('image_lib', $config);
+
+            $this->image_lib->resize();
+        }
+
+        $this->session->set_flashdata('create_blog_success', true);
+        gotoUrl('/admin/blog');
     }
 }

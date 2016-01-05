@@ -3,6 +3,10 @@
 <?php if (!empty($this->session->flashdata('login_success'))) : ?>
     <paper-toast class="success" id="toastLoginSuccess" text="<?php echo str_replace('{{name}}', auth('name'), lang('login_success')); ?>" opened></paper-toast>
 <?php endif; ?>
+
+<?php if (!empty($this->session->flashdata('create_blog_success'))) : ?>
+    <paper-toast class="success" id="toastCreateBlogSuccess" text="Create blog successfully!" opened></paper-toast>
+<?php endif; ?>
 <script>
     var App = document.querySelector('#adminPanel');
     App.hideMenu = function (event) {
