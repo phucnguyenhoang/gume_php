@@ -37,14 +37,18 @@ class Admin extends CI_Controller
         $header = array(
             'title' => 'Blog create'
         );
+        $data = array();
 
         $control = array(
             'arrow-back' => '/admin/blog'
         );
         $header['control'] = $control;
 
+        $categories = $this->category->getAll(true);
+        $data['categories'] = $categories;
+
         $this->load->view('layout/admin_header', $header);
-        $this->load->view('admin/blog_create');
+        $this->load->view('admin/blog_create', $data);
         $this->load->view('layout/admin_footer');
     }
 

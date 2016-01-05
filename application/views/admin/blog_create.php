@@ -13,10 +13,11 @@
             <paper-input name="tag" id="txtTag" label="Tags" char-counter maxlength="200" pattern="[a-zA-Z0-9\-,_\s]+"></paper-input>
             <paper-dropdown-menu label="Category" id="cboCategory" class="drd-category" required>
                 <paper-menu class="dropdown-content" attr-for-selected="value" selected="{{category}}">
-                    <paper-item value="1">Croissant</paper-item>
-                    <paper-item value="2">Donut</paper-item>
-                    <paper-item value="3">Financier</paper-item>
-                    <paper-item value="4">Madeleine</paper-item>
+                    <?php if (!empty($categories)) : ?>
+                        <?php foreach ($categories as $category) : ?>
+                            <paper-item value="<?php echo $category->id; ?>"><?php echo $category->name; ?></paper-item>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </paper-menu>
             </paper-dropdown-menu>
             <input type="hidden" name="category_id" value="{{category}}">
