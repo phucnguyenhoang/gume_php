@@ -1,6 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/paper-tooltip/paper-tooltip.html">
 
 <dom-module id="hot-blog">
     <style is="custom-style">
@@ -50,6 +51,7 @@
             <div class="blog-content">
                 <content></content>
             </div>
+            <paper-tooltip>{{tooltip}}</paper-tooltip>
         </a>
     </template>
     <script>
@@ -63,6 +65,10 @@
                 src: {
                     type: String,
                     value: '#'
+                },
+                tooltip: {
+                    type: String,
+                    value: ''
                 }
             },
             ready: function() {

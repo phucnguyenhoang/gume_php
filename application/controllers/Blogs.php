@@ -93,9 +93,9 @@ class Blogs extends CI_Controller {
         if (!is_dir ($imagePath)) {
             mkdir($imagePath, 0777);
         }
-        $config['upload_path']          = $imagePath;
-        $config['file_name']            = $imageName;
-        $config['allowed_types']        = 'gif|jpg|png';
+        $config['upload_path']          = $imagePath.'/';
+        $config['file_name']            = $imageName.substr($tmpImgName, stripos($tmpImgName, '.'));
+        $config['allowed_types']        = '*';
         $config['max_size']             = 10240;
 
         $this->load->library('upload', $config);
